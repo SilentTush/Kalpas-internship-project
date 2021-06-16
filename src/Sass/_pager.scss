@@ -1,0 +1,53 @@
+.pager {
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+  font-size: 20px;
+  font-weight: 700;
+  .backButton {
+    margin: 0 22px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    svg {
+      fill: #bcbcbc;
+    }
+  }
+  .pageItem {
+    margin: 0 22px;
+    user-select: none;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: #bcbcbc;
+    color: white;
+  }
+  .activePageItem {
+    background: #fff;
+    cursor: pointer;
+    color: #6d6d6d;
+    box-shadow: 0px 8px 28px rgba(24, 39, 75, 0.12),
+      0px 18px 88px rgba(24, 39, 75, 0.14);
+  }
+  .nextButton {
+    margin: 0 22px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    svg {
+      fill: #bcbcbc;
+    }
+  }
+}

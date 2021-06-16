@@ -1,4 +1,10 @@
 .home {
   background-color: rgba(235, 242, 247, 1);
   height: 100vh;
+  display: flex;
+
+  .newsContainer {
+    flex: 1;
+    margin-top: 70px;
+  }
 }

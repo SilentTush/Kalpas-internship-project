@@ -1,0 +1,124 @@
+.leftPanel {
+  min-width: 391px;
+  max-width: 500px;
+  width: 30vw;
+  height: 100%;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #ebf2f7;
+  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  padding: 70px 56px;
+  .panelHead {
+    display: flex;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+      0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+    border-radius: 8px;
+    padding: 13px;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+    .headTitleAndSubtitle {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      h3 {
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+  }
+  .toggleWrapper {
+    padding: 13px 31px;
+    height: 161px;
+    margin-top: 25px;
+    background: #ffffff;
+    box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+      0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+    border-radius: 8px;
+    h2 {
+      font-weight: 700;
+      font-size: 28px;
+      text-align: center;
+    }
+    .toggleButtons {
+      display: flex;
+      margin-top: 18px;
+      height: 78px;
+      cursor: pointer;
+      .cardButton {
+        flex: 1;
+        background: #ebf2f7;
+        box-shadow: inset 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+          inset 0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+        border-radius: 8px 0px 0px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 45px;
+          height: 34px;
+        }
+        &:hover {
+          background: #d0d7db;
+        }
+      }
+      .listButton {
+        flex: 1;
+        background: #a3ffd3;
+        box-shadow: inset 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+          inset 0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+        border-radius: 0px 8px 8px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 45px;
+          height: 34px;
+        }
+        &:hover {
+          background: #95ebc1;
+        }
+      }
+    }
+  }
+  .feedbackWrapper {
+    padding: 18px 24px;
+    height: 150px;
+    margin-top: 25px;
+    background: #ffffff;
+    box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+      0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+    border-radius: 8px;
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .feedbackButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 21px;
+      height: 58px;
+      font-size: 20px;
+      font-weight: 700;
+      background: #a3ffd3;
+      box-shadow: inset 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+        inset 0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+      border-radius: 8px;
+      cursor: pointer;
+      &:hover {
+        background: #95ebc1;
+      }
+    }
+  }
+}
