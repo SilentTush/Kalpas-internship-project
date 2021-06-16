@@ -1,6 +1,13 @@
 import React from "react";
 
-function NewsListTypeContainer({ id, title, summary, published, link }) {
+function NewsListTypeContainer({
+  id,
+  title,
+  summary,
+  published,
+  link,
+  deletefunction,
+}) {
   return (
     <div className="newsListContainer" key={id}>
       <img
@@ -12,7 +19,7 @@ function NewsListTypeContainer({ id, title, summary, published, link }) {
         <p className="news">{summary}</p>
         <p className="time">{published}</p>
       </div>
-      <div className="removeButton">
+      <div className="removeButton" onClick={() => deletefunction(id)}>
         <svg
           width="22"
           height="22"

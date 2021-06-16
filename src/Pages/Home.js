@@ -8,30 +8,40 @@ function Home() {
   const [isInListMode, setIsInListMode] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [noOfPages, setNoOfPages] = useState(0);
+  const [apidata, setapidata] = useState(null);
   useEffect(() => {
     loadNews();
     async function loadNews() {
       axios.get("https://api.first.org/data/v1/news").then((response) => {
-        let totalNews = response.data.data.length;
-        let noOfPages = totalNews / 5;
-        setNoOfPages(noOfPages);
-        let responseArray = response.data.data;
-        let sortedNews = [];
-        for (let i = 0; i < noOfPages; i++) {
-          let newsarray = [];
-          if (responseArray.length >= 5) {
-            newsarray = responseArray.slice(0, 5);
-            responseArray.splice(0, 5);
-          } else {
-            newsarray = responseArray.slice(0, responseArray.length);
-            responseArray.splice(0, responseArray.length);
-          }
-          sortedNews.push(newsarray);
-        }
-        setNews(sortedNews);
+        setapidata(response.data.data);
+        console.log(response.data.data);
       });
     }
   }, []);
+  useEffect(() => {
+    if (!apidata) return;
+    let totalNews = apidata.length;
+    let noOfPages = totalNews / 5;
+    setNoOfPages(Math.trunc(noOfPages));
+    let responseArray = [...apidata];
+    let sortedNews = [];
+    for (let i = 0; i < noOfPages; i++) {
+      let newsarray = [];
+      if (responseArray.length >= 5) {
+        newsarray = responseArray.slice(0, 5);
+        responseArray.splice(0, 5);
+      } else {
+        newsarray = responseArray.slice(0, responseArray.length);
+        responseArray.splice(0, responseArray.length);
+      }
+      sortedNews.push(newsarray);
+    }
+    setNews(sortedNews);
+  }, [apidata]);
+
+  function deletefunction(id) {
+    setapidata(apidata.filter((item) => item.id !== id));
+  }
   return (
     <div className="home">
       <LeftPanel />
@@ -46,6 +56,7 @@ function Home() {
                     title={news.title}
                     link={news.link}
                     summary={news.summary}
+                    deletefunction={deletefunction}
                   />
                 );
               }
