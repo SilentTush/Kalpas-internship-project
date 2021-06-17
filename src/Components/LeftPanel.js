@@ -78,6 +78,9 @@ function LeftPanel({
         .then(() => {
           alert("Successfully submitted");
           setOpenFeedback(false);
+        })
+        .catch((err) => {
+          if (err) console.log(err);
         });
     }
   }
