@@ -5,16 +5,21 @@
   overflow: hidden;
   .newsContainer {
     flex: 1;
-    margin-top: 70px;
+
     .mainContainer {
-      height: 80vh;
-      overflow: hidden;
+      height: 88vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-top: 7vh;
       justify-content: center;
     }
     .mainContainerCards {
       flex-wrap: wrap;
       display: flex;
       align-content: flex-start;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-top: 7vh;
     }
   }
   .shiftContainer {
