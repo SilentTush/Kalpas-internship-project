@@ -215,8 +215,8 @@ function LeftPanel({
                   ) : null}
                 </div>
               </div>
-              <div className="submitButton">Submit Feedback</div>
             </form>
+            <div className="submitButton">Submit Feedback</div>
           </div>
         ) : null}
       </div>

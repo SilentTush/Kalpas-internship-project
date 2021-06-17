@@ -3,6 +3,8 @@
     display: flex;
     overflow: hidden;
     height: 100%;
+    box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+      0px 18px 88px -4px rgba(24, 39, 75, 0.14);
     .leftPanel {
       min-width: 391px;
       max-width: 500px;
@@ -13,7 +15,7 @@
       background: #ebf2f7;
       box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
         0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-      padding: 70px 56px;
+      padding: 7vh 3vw;
       .panelHead {
         display: flex;
         background-color: rgba(255, 255, 255, 1);
@@ -141,7 +143,6 @@
     }
     .feedbackPanel {
       min-width: 391px;
-      max-width: 900px;
       width: 45vw;
       height: 100%;
       border-bottom-right-radius: 20px;
@@ -149,23 +150,27 @@
       background: #ebf2f7;
       box-shadow: 55px 20px 42px -16px rgba(24, 39, 75, 0.12),
         55px 20px 40px -14px rgba(24, 39, 75, 0.14);
-      padding: 70px 56px;
+      padding-top: 7vh;
       .heading {
         font-weight: 700;
         font-size: 24px;
+        padding-left: 56px;
       }
       .subheading {
         font-weight: 400;
         font-size: 16px;
+        padding-left: 56px;
         margin-top: 5px;
       }
       form {
-        margin-top: 40px;
-        height: 80vh;
+        margin-top: 1vh;
+        height: 70vh;
         display: flex;
         flex-direction: column;
-        overflow-y: scroll;
-        scrollbar-width: none;
+        overflow-y: auto;
+        scrollbar-width: 2px;
+        padding-left: 56px;
+        padding-bottom: 10px;
         label {
           font-weight: 400;
           font-size: 16px;
@@ -174,7 +179,8 @@
         }
         input {
           margin-top: 10px;
-          width: 346px;
+          width: 15vw;
+          min-width: 200px;
           height: 43px;
           font-weight: 400;
           border: none;
@@ -188,7 +194,7 @@
         }
         .address {
           margin-top: 10px;
-          width: 595px;
+          width: 80%;
           height: 123px;
           font-weight: 400;
           border: none;
@@ -205,7 +211,8 @@
           display: flex;
           flex-direction: column;
           position: relative;
-          width: 346px;
+          width: 15vw;
+          min-width: 200px;
           svg {
             position: absolute;
             right: 5px;
@@ -275,27 +282,29 @@
             }
           }
         }
-        .submitButton {
-          background: #5cc8a1;
-          width: 231px;
-          height: 46px;
-          margin-top: 30px;
-          box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-            0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-          border-radius: 8px;
-          font-weight: 700;
-          font-size: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #fff;
-          cursor: pointer;
-          &:hover {
-            background: #46af88;
+      }
+      .submitButton {
+        background: #5cc8a1;
+        width: 15vw;
+        min-width: 200px;
+        height: 46px;
+        margin-top: 16px;
+        box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+          0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 56px;
+        &:hover {
+          background: #46af88;
 
-            box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.267),
-              0px 18px 88px -4px rgba(24, 39, 75, 0.288);
-          }
+          box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.267),
+            0px 18px 88px -4px rgba(24, 39, 75, 0.288);
         }
       }
     }
