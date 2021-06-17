@@ -9,14 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  //   .background {
-  //     background: rgba(255, 77, 77, 0.4);
-  //     z-index: 4;
-  //     backdrop-filter: blur(10px);
-
-  //     width: 100vw;
-  //     height: 100vh;
-  //   }
+  .background {
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+  }
 
   .newsPageFrame {
     position: absolute;
@@ -28,6 +25,7 @@
     box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.25),
       0px 18px 88px -4px rgba(24, 39, 75, 0.28);
     border-radius: 16px;
+    background-color: #1c1b22;
   }
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {

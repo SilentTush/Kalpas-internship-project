@@ -2,9 +2,27 @@
   background-color: rgba(235, 242, 247, 1);
   height: 100vh;
   display: flex;
-
+  overflow: hidden;
   .newsContainer {
     flex: 1;
     margin-top: 70px;
+    .mainContainer {
+      height: 80vh;
+      overflow: hidden;
+      justify-content: center;
+    }
+    .mainContainerCards {
+      flex-wrap: wrap;
+      display: flex;
+      align-content: flex-start;
+    }
+  }
+  .shiftContainer {
+    margin-left: 500px;
+  }
+  .newsContainerCards {
+    flex-wrap: wrap;
+    display: flex;
+    align-content: flex-start;
   }
 }

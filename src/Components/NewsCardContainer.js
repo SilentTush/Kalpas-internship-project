@@ -1,15 +1,39 @@
 import React from "react";
 
-function NewsCardContainer({ id, title, summary, published, link }) {
+function NewsCardContainer({
+  id,
+  title,
+  summary,
+  published,
+  link,
+  deletefunction,
+  setShowNewsPage,
+  setCurrentLink,
+}) {
   return (
-    <div className="newsCardContainer" key={id}>
-      <img src="" alt="" />
-      <div className="newsWrapper">
-        <p className="headline">{title}</p>
-        <p className="news">{summary}</p>
+    <div className="newsCardContainerWrapper">
+      <div
+        className="newsCardContainer"
+        key={id}
+        onClick={() => {
+          setShowNewsPage(true);
+          setCurrentLink(link);
+        }}
+      >
+        <p className="headline">
+          {title.length > 40 ? title.substring(0, 40) + "..." : title}
+        </p>
+        <p className="news">
+          {summary?.length > 40 ? summary.substring(0, 40) + "..." : summary}
+        </p>
         <p className="time">{published}</p>
+
+        <img
+          src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
+          alt=""
+        />
       </div>
-      <div className="RemoveButton">
+      <div className="removeButton" onClick={() => deletefunction(id)}>
         <svg
           width="22"
           height="22"
