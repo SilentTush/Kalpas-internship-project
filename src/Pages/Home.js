@@ -3,12 +3,15 @@ import LeftPanel from "../Components/LeftPanel";
 import axios from "axios";
 import NewsListTypeContainer from "../Components/NewsListTypeContainer";
 import Pager from "../Components/Pager";
+import NewsPage from "../Components/NewsPage";
 function Home() {
   const [news, setNews] = useState([]);
   const [isInListMode, setIsInListMode] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [noOfPages, setNoOfPages] = useState(0);
   const [apidata, setapidata] = useState(null);
+  const [showNewsPage, setShowNewsPage] = useState(false);
+  const [currentLink, setCurrentLink] = useState(null);
   useEffect(() => {
     loadNews();
     async function loadNews() {
@@ -45,6 +48,7 @@ function Home() {
   return (
     <div className="home">
       <LeftPanel />
+      {showNewsPage && currentLink ? <NewsPage link={currentLink} /> : null}
       <div className="newsContainer">
         {news[currentPage - 1]
           ? news[currentPage - 1].map((news) => {
@@ -57,6 +61,8 @@ function Home() {
                     link={news.link}
                     summary={news.summary}
                     deletefunction={deletefunction}
+                    setShowNewsPage={setShowNewsPage}
+                    setCurrentLink={setCurrentLink}
                   />
                 );
               }

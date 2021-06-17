@@ -7,9 +7,18 @@ function NewsListTypeContainer({
   published,
   link,
   deletefunction,
+  setShowNewsPage,
+  setCurrentLink,
 }) {
   return (
-    <div className="newsListContainer" key={id}>
+    <div
+      className="newsListContainer"
+      key={id}
+      onClick={() => {
+        setShowNewsPage(true);
+        setCurrentLink(link);
+      }}
+    >
       <img
         src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
         alt=""
