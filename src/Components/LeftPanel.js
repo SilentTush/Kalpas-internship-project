@@ -62,16 +62,24 @@ function LeftPanel({
     setshowsuggestion(false);
   }
   async function handleSubmit() {
-    console.log("f");
-    const res = await db.collection("submissions").add({
-      firstname,
-      lastname,
-      address,
-      country,
-      phone: dialcode + phone,
-      email,
-    });
-    console.log("added", res.id);
+    if (!email || !firstname || !lastname || !address || !phone || !country) {
+      alert("fill details first");
+    } else {
+      db.collection("submissions")
+        .doc(email)
+        .set({
+          firstname,
+          lastname,
+          address,
+          country,
+          phone: dialcode + phone,
+          email,
+        })
+        .then(() => {
+          alert("Successfully submitted");
+          setOpenFeedback(false);
+        });
+    }
   }
   return (
     <div className={`leftPanelWrapper ${openFeedback ? "addBlur" : ""}`}>

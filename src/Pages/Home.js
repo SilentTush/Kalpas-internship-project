@@ -14,12 +14,12 @@ function Home() {
   const [showNewsPage, setShowNewsPage] = useState(false);
   const [currentLink, setCurrentLink] = useState(null);
   const [openFeedback, setOpenFeedback] = useState(false);
+
   useEffect(() => {
     loadNews();
     async function loadNews() {
       axios.get("https://api.first.org/data/v1/news").then((response) => {
         setapidata(response.data.data);
-        console.log(response.data.data);
       });
     }
   }, []);
